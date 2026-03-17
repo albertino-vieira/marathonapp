@@ -3,7 +3,7 @@ import SwiftUI
 // MARK: - GoalsView
 
 struct GoalsView: View {
-    @EnvironmentObject var vm: AppViewModel
+    @Environment(AppViewModel.self) var vm
     @State private var showEditGoal = false
     @State private var goalKm: Double = 40
     @State private var goalSessions: Int = 4

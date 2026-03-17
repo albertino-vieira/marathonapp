@@ -3,7 +3,7 @@ import SwiftUI
 // MARK: - PlanView
 
 struct PlanView: View {
-    @EnvironmentObject var vm: AppViewModel
+    @Environment(AppViewModel.self) var vm
     @State private var selectedWeekIndex = 0
 
     var body: some View {

@@ -10,7 +10,7 @@ import SwiftUI
 // MARK: - MainTabView
 
 struct MainTabView: View {
-    @EnvironmentObject var vm: AppViewModel
+    @Environment(AppViewModel.self) var vm
 
     var body: some View {
         TabView {
@@ -50,5 +50,5 @@ struct MainTabView: View {
 
 #Preview {
     MainTabView()
-        .environmentObject(AppViewModel())
+        .environment(AppViewModel())
 }

@@ -4,7 +4,7 @@ import Charts
 // MARK: - AnalysisView
 
 struct AnalysisView: View {
-    @EnvironmentObject var vm: AppViewModel
+    @Environment(AppViewModel.self) var vm
 
     var body: some View {
         NavigationView {

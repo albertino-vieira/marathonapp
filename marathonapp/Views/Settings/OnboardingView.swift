@@ -3,7 +3,7 @@ import SwiftUI
 // MARK: - OnboardingView
 
 struct OnboardingView: View {
-    @EnvironmentObject var vm: AppViewModel
+    @Environment(AppViewModel.self) var vm
     @State private var step = 0
     @State private var profile = RunnerProfile()
     @State private var isRequestingHK = false

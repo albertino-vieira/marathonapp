@@ -3,7 +3,7 @@ import SwiftUI
 // MARK: - SettingsView
 
 struct SettingsView: View {
-    @EnvironmentObject var vm: AppViewModel
+    @Environment(AppViewModel.self) var vm
     @State private var editedProfile: RunnerProfile = RunnerProfile()
     @State private var showingDatePicker = false
 

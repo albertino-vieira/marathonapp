@@ -9,16 +9,16 @@ import SwiftUI
 
 @main
 struct marathonappApp: App {
-    @StateObject private var appViewModel = AppViewModel()
+    @State private var appViewModel = AppViewModel()
 
     var body: some Scene {
         WindowGroup {
             if appViewModel.showOnboarding {
                 OnboardingView()
-                    .environmentObject(appViewModel)
+                    .environment(appViewModel)
             } else {
                 MainTabView()
-                    .environmentObject(appViewModel)
+                    .environment(appViewModel)
             }
         }
     }

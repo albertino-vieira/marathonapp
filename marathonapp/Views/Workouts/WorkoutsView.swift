@@ -3,7 +3,7 @@ import SwiftUI
 // MARK: - WorkoutsView
 
 struct WorkoutsView: View {
-    @EnvironmentObject var vm: AppViewModel
+    @Environment(AppViewModel.self) var vm
     @State private var searchText = ""
     @State private var filterType: WorkoutType? = nil
     @State private var sortBy: SortOption = .date

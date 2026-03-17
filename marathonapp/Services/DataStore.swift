@@ -1,23 +1,25 @@
 import Foundation
+import Observation
 
 // MARK: - DataStore
 //
 // Persists workouts, profile, and plan using UserDefaults (JSON encoded).
 // Suitable for MVP. Can be swapped for Core Data / SwiftData in a later phase.
 
+@Observable
 @MainActor
-final class DataStore: ObservableObject {
+final class DataStore {
     static let shared = DataStore()
 
     private let defaults = UserDefaults.standard
     private let encoder = JSONEncoder()
     private let decoder = JSONDecoder()
 
-    @Published var workouts: [RunWorkout] = []
-    @Published var profile: RunnerProfile = RunnerProfile()
-    @Published var trainingPlan: TrainingPlan?
-    @Published var personalRecords: [PersonalRecord] = []
-    @Published var weeklyGoals: [WeeklyGoal] = []
+    var workouts: [RunWorkout] = []
+    var profile: RunnerProfile = RunnerProfile()
+    var trainingPlan: TrainingPlan?
+    var personalRecords: [PersonalRecord] = []
+    var weeklyGoals: [WeeklyGoal] = []
 
     // MARK: - Keys
 

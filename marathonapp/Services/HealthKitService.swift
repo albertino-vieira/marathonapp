@@ -1,18 +1,20 @@
 import Foundation
 import HealthKit
+import Observation
 
 // MARK: - HealthKitService
 
 /// Manages all HealthKit interactions: permissions, data fetch, and parsing.
+@Observable
 @MainActor
-final class HealthKitService: ObservableObject {
+final class HealthKitService {
     static let shared = HealthKitService()
 
     private let store = HKHealthStore()
 
-    @Published var authorizationStatus: AuthorizationStatus = .notDetermined
-    @Published var isLoading = false
-    @Published var lastSyncDate: Date?
+    var authorizationStatus: AuthorizationStatus = .notDetermined
+    var isLoading = false
+    var lastSyncDate: Date?
 
     // MARK: - Types to read
 

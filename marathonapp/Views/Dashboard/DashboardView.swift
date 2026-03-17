@@ -4,7 +4,7 @@ import Charts
 // MARK: - DashboardView
 
 struct DashboardView: View {
-    @EnvironmentObject var vm: AppViewModel
+    @Environment(AppViewModel.self) var vm
     @State private var showSyncConfirm = false
     @State private var selectedChartMode: ChartMode = .volume
 

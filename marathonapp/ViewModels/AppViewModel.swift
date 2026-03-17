@@ -1,12 +1,14 @@
 import Foundation
 import SwiftUI
+import Observation
 
 // MARK: - AppViewModel
 //
 // Central state coordinator. All screens observe this object.
 
+@Observable
 @MainActor
-final class AppViewModel: ObservableObject {
+final class AppViewModel {
 
     // MARK: - Services
 
@@ -14,20 +16,20 @@ final class AppViewModel: ObservableObject {
     private let analytics = AnalyticsService.shared
     private let store = DataStore.shared
 
-    // MARK: - Published State
+    // MARK: - State
 
-    @Published var workouts: [RunWorkout] = []
-    @Published var weeklyStats: [WeeklyStats] = []
-    @Published var readiness: MarathonReadiness?
-    @Published var personalRecords: [PersonalRecord] = []
-    @Published var trainingPlan: TrainingPlan?
-    @Published var profile: RunnerProfile = RunnerProfile()
-    @Published var currentWeekGoal: WeeklyGoal?
+    var workouts: [RunWorkout] = []
+    var weeklyStats: [WeeklyStats] = []
+    var readiness: MarathonReadiness?
+    var personalRecords: [PersonalRecord] = []
+    var trainingPlan: TrainingPlan?
+    var profile: RunnerProfile = RunnerProfile()
+    var currentWeekGoal: WeeklyGoal?
 
-    @Published var isLoading = false
-    @Published var syncError: String?
-    @Published var lastSyncDate: Date?
-    @Published var showOnboarding = false
+    var isLoading = false
+    var syncError: String?
+    var lastSyncDate: Date?
+    var showOnboarding = false
 
     // MARK: - Init
 
