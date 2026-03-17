@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct marathonappApp: App {
+    @StateObject private var appViewModel = AppViewModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if appViewModel.showOnboarding {
+                OnboardingView()
+                    .environmentObject(appViewModel)
+            } else {
+                MainTabView()
+                    .environmentObject(appViewModel)
+            }
         }
     }
 }

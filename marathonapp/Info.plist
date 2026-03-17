@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>NSHealthShareUsageDescription</key>
+    <string>MarathonApp reads your running workouts, heart rate, distance, cadence, and elevation from Apple Health to analyse your training and provide personalised marathon preparation insights.</string>
+    <key>NSHealthUpdateUsageDescription</key>
+    <string>MarathonApp does not write data to Apple Health.</string>
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>fetch</string>
+    </array>
+    <key>NSUserNotificationUsageDescription</key>
+    <string>MarathonApp sends training reminders and performance insights.</string>
+</dict>
+</plist>

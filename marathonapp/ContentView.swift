@@ -7,18 +7,48 @@
 
 import SwiftUI
 
-struct ContentView: View {
+// MARK: - MainTabView
+
+struct MainTabView: View {
+    @EnvironmentObject var vm: AppViewModel
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView {
+            DashboardView()
+                .tabItem {
+                    Label("Dashboard", systemImage: "house.fill")
+                }
+
+            WorkoutsView()
+                .tabItem {
+                    Label("Workouts", systemImage: "figure.run")
+                }
+
+            AnalysisView()
+                .tabItem {
+                    Label("Analysis", systemImage: "chart.bar.xaxis")
+                }
+
+            PlanView()
+                .tabItem {
+                    Label("Plan", systemImage: "calendar")
+                }
+
+            GoalsView()
+                .tabItem {
+                    Label("Goals", systemImage: "trophy.fill")
+                }
+
+            SettingsView()
+                .tabItem {
+                    Label("Settings", systemImage: "gear")
+                }
         }
-        .padding()
+        .accentColor(.blue)
     }
 }
 
 #Preview {
-    ContentView()
+    MainTabView()
+        .environmentObject(AppViewModel())
 }
